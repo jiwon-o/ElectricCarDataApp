@@ -108,14 +108,12 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
                         android:orientation="horizontal">
 
                         <FrameLayout
                             android:id="@+id/frame_layout_temperature"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:clickable="true">
+                            android:layout_height="wrap_content">
 
                             <ImageView
                                 android:layout_width="match_parent"
@@ -255,15 +253,15 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
                         android:orientation="horizontal">
 
                         <FrameLayout
+                            android:id="@+id/frame_layout_camera"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:id="@+id/frame_layout_camera"
+
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/btn_black" />
@@ -295,6 +293,7 @@
                         </FrameLayout>
 
                         <FrameLayout
+                            android:id="@+id/frame_layout_music"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
@@ -331,6 +330,7 @@
                         </FrameLayout>
 
                         <FrameLayout
+                            android:id="@+id/frame_layout_door"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 

@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TemperatureActivity"/>
+        <activity android:name=".BatteryActivity"/>
+        <activity android:name=".EnergyActivity"/>
+        <activity android:name=".CameraActivity"/>
+        <activity android:name=".MusicActivity"/>
+        <activity android:name=".DoorActivity"/>
 
     </application>
 
