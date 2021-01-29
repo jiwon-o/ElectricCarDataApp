@@ -62,7 +62,7 @@ public class DataFragment extends Fragment {
             chart = view.findViewById(R.id.chart_line);
 
             // background color
-            chart.setBackgroundColor(Color.WHITE);
+            chart.setBackgroundColor(Color.rgb(29, 33, 35));
 
             // disable description text
             chart.getDescription().setEnabled(false);
@@ -159,6 +159,7 @@ public class DataFragment extends Fragment {
         chart2.setPinchZoom(true);
 
         chart2.setDrawGridBackground(false);
+        chart2.setBackgroundColor(Color.rgb(29, 33, 35));
         // chart.setDrawYLabels(false);
 
         chart2.animateXY(2000, 2000);
@@ -184,7 +185,7 @@ public class DataFragment extends Fragment {
         yAxis.setAxisMinimum(14f);
         yAxis.setGranularity(65f);
         yAxis.setDrawGridLines(true);
-        yAxis.setDrawAxisLine(false);
+        yAxis.setDrawAxisLine(true);
         yAxis.setDrawLabels(true);
 
         YAxis rightAxis = chart2.getAxisRight();
@@ -295,7 +296,7 @@ public class DataFragment extends Fragment {
                 BarData datas = new BarData(dataSet);
                 datas.setValueTextSize(10f);
                 datas.setBarWidth(0.5f);
-                set2.setDrawValues(!set1.isDrawValuesEnabled()); //Invisible numbers
+                set2.setDrawValues(!set2.isDrawValuesEnabled()); //Invisible numbers
                 barChart.setData(datas);
 
 

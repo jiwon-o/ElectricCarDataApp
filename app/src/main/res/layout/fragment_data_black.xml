@@ -9,9 +9,10 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
 
 
             <LinearLayout
@@ -24,7 +25,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="34dp"
                     android:fontFamily="@font/roboto_bold"
                     android:lineSpacingExtra="6sp"
                     android:text="Range"
@@ -56,18 +56,27 @@
 
             </LinearLayout>
 
-            <include layout = "@layout/activity_linechart"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_margin="30dp"
+                android:orientation="vertical">
+
+                <include layout="@layout/activity_linechart" />
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/linearLayout1"
+                android:layout_marginTop="20dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="34dp"
                     android:fontFamily="@font/roboto_bold"
                     android:lineSpacingExtra="6sp"
                     android:text="Temperature"
@@ -98,7 +107,17 @@
                     android:textStyle="normal" />
             </LinearLayout>
 
-            <include layout = "@layout/activity_barchart"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_margin="30dp"
+                android:orientation="vertical">
+
+                <include layout = "@layout/activity_barchart"/>
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
 
