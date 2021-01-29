@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_home_unclick_black"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/action_control"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_control_unclick_black"
+        android:title="Control"/>
+
+    <item
+        android:id="@+id/action_data"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_data_unclick"
+        android:title="Data"/>
+
+</menu>
