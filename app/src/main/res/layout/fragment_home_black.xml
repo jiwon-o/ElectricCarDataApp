@@ -19,6 +19,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
@@ -64,203 +65,222 @@
             android:layout_below="@+id/ln_title"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/img_car_top" />
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/lottieView"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:lottie_rawRes="@raw/battery_animation"
-                android:layout_marginTop="70dp"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true" />
 
             <LinearLayout
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:layout_marginTop="40dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_medium"
-                    android:letterSpacing="0.02"
-                    android:lineSpacingExtra="2sp"
-                    android:text="Battery"
-                    android:textColor="@color/text_white"
-                    android:textSize="15sp"
-                    android:textStyle="normal" />
 
                 <LinearLayout
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="vertical">
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                   >
-
-<!--                        <pl.bclogic.pulsator4droid.library.PulsatorLayout-->
-<!--                            android:id="@+id/pulsator"-->
-<!--                            android:layout_width="52dp"-->
-<!--                            android:layout_height="56dp"-->
-<!--                            app:pulse_count="5"-->
-<!--                            app:pulse_duration="5000"-->
-<!--                            app:pulse_repeat="0"-->
-<!--                            app:pulse_color="#77ff77"-->
-<!--                            app:pulse_startFromScratch="true"-->
-<!--                            app:pulse_interpolator="Decelerate">-->
-<!--                        </pl.bclogic.pulsator4droid.library.PulsatorLayout>-->
-
-
-                    <TextView
-                        android:id="@+id/textView_Battery"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:letterSpacing="0.02"
+                            android:lineSpacingExtra="2sp"
+                            android:text="Battery"
+                            android:textColor="@color/text_white"
+                            android:textSize="15sp"
+                            android:textStyle="normal" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/lottieView"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/battery_animation" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <!--                        <pl.bclogic.pulsator4droid.library.PulsatorLayout-->
+                            <!--                            android:id="@+id/pulsator"-->
+                            <!--                            android:layout_width="52dp"-->
+                            <!--                            android:layout_height="56dp"-->
+                            <!--                            app:pulse_count="5"-->
+                            <!--                            app:pulse_duration="5000"-->
+                            <!--                            app:pulse_repeat="0"-->
+                            <!--                            app:pulse_color="#77ff77"-->
+                            <!--                            app:pulse_startFromScratch="true"-->
+                            <!--                            app:pulse_interpolator="Decelerate">-->
+                            <!--                        </pl.bclogic.pulsator4droid.library.PulsatorLayout>-->
+
+
+                            <TextView
+                                android:id="@+id/textView_Battery"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_medium"
+                                android:letterSpacing="0.02"
+                                android:lineSpacingExtra="-23sp"
+                                android:text="98"
+                                android:textColor="@color/text_white"
+                                android:textSize="41sp"
+                                android:textStyle="normal" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="18dp"
+                            android:fontFamily="@font/roboto_light"
+                            android:letterSpacing="0.02"
+                            android:lineSpacingExtra="-6sp"
+                            android:text="%"
+                            android:textColor="@color/text_white"
+                            android:textSize="23sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
                         android:fontFamily="@font/roboto_medium"
                         android:letterSpacing="0.02"
-                        android:lineSpacingExtra="-23sp"
-                        android:text="98"
+                        android:lineSpacingExtra="2sp"
+                        android:text="Range"
                         android:textColor="@color/text_white"
-                        android:textSize="41sp"
+                        android:textSize="16sp"
                         android:textStyle="normal" />
-                </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:lineSpacingExtra="14sp"
+                            android:text="47"
+                            android:textColor="@color/text_white"
+                            android:textSize="38sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:fontFamily="@font/roboto_light"
+                            android:lineSpacingExtra="7sp"
+                            android:text="mi"
+                            android:textColor="@color/text_white"
+                            android:textSize="23sp" />
+                    </LinearLayout>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="18dp"
-                        android:layout_marginLeft="5dp"
-                        android:fontFamily="@font/roboto_light"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/roboto_medium"
                         android:letterSpacing="0.02"
-                        android:lineSpacingExtra="-6sp"
-                        android:text="%"
+                        android:lineSpacingExtra="2sp"
+                        android:text="Temp"
                         android:textColor="@color/text_white"
-                        android:textSize="23sp" />
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
 
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="26dp"
-                    android:fontFamily="@font/roboto_medium"
-                    android:letterSpacing="0.02"
-                    android:lineSpacingExtra="2sp"
-                    android:text="Range"
-                    android:textColor="@color/text_white"
-                    android:textSize="16sp"
-                    android:textStyle="normal" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/opensans_bold"
-                        android:lineSpacingExtra="14sp"
-                        android:text="47"
-                        android:textColor="@color/text_white"
-                        android:textSize="38sp"
-                        android:textStyle="bold" />
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="6dp"
-                        android:fontFamily="@font/roboto_light"
-                        android:lineSpacingExtra="7sp"
-                        android:text="mi"
-                        android:textColor="@color/text_white"
-                        android:textSize="23sp" />
-                </LinearLayout>
+                        <TextView
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:fontFamily="@font/roboto_medium"
-                    android:letterSpacing="0.02"
-                    android:lineSpacingExtra="2sp"
-                    android:text="Temp"
-                    android:textColor="@color/text_white"
-                    android:textSize="15sp"
-                    android:textStyle="normal" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/opensans_bold"
+                            android:lineSpacingExtra="14sp"
+                            android:text="71"
+                            android:textColor="@color/text_white"
+                            android:textSize="37sp"
+                            android:textStyle="bold" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/roboto_light"
+                            android:lineSpacingExtra="14sp"
+                            android:text="°"
+                            android:textColor="@color/text_white"
+                            android:textSize="20sp" />
 
-                    <TextView
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_light"
+                            android:lineSpacingExtra="7sp"
+                            android:text="F"
+                            android:textColor="@color/text_white"
+                            android:textSize="23sp" />
+                    </LinearLayout>
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/opensans_bold"
-                        android:lineSpacingExtra="14sp"
-                        android:text="71"
-                        android:textColor="@color/text_white"
-                        android:textSize="37sp"
-                        android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="8dp"
-                        android:fontFamily="@font/roboto_light"
-                        android:lineSpacingExtra="14sp"
-                        android:text="°"
-                        android:textColor="@color/text_white"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_light"
-                        android:lineSpacingExtra="7sp"
-                        android:text="F"
-                        android:textColor="@color/text_white"
-                        android:textSize="23sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="30dp"
                     android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="10dp"
                         android:src="@drawable/ic_arrow_up" />
 
                     <ImageView
                         android:id="@+id/btn_red"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:src="@drawable/btn_circle_red" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="10dp"
                         android:src="@drawable/ic_arrow_down" />
                 </LinearLayout>
+
             </LinearLayout>
+
+
+
         </LinearLayout>
 
     </RelativeLayout>

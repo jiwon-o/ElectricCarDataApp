@@ -15,81 +15,59 @@ import android.view.WindowManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+    private BottomNavigationView mBottomNV;
 
-
-    private BottomNavigationView bottomNavigationView;
-    private FragmentManager fragmentManager;
-    private FragmentTransaction fragmentTransaction;
-    private Fragment HomeFragment;
-    private Fragment DataFragment;
-    private Fragment ControlFragment;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
 
-
-        bottomNavigationView = findViewById(R.id.bottom_navigation_view);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-
+        //Navigation Listener
+        mBottomNV = findViewById(R.id.bottom_navigation_view);
+        mBottomNV.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() { //NavigationItemSelect
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                BottomNavigate(menuItem.getItemId());
 
-                switch (item.getItemId()){
-                    case R.id.action_home:
-                        setFrag(0);
-                        break;
-                    case R.id.action_control:
-                        setFrag(1);
-                        break;
-                    case R.id.action_data:
-                        setFrag(2);
-                        break;
-                }
                 return true;
             }
         });
-        HomeFragment = new HomeFragment();
-        DataFragment = new DataFragment();
-        ControlFragment = new ControlFragment();
-
-        setFrag(0);//첫 프래그머트 화면 지정
-
+        mBottomNV.setSelectedItemId(R.id.action_home);
     }
 
-//    @Override
-//    protected void onSaveInstanceState(@NonNull Bundle outState) {
-//        super.onSaveInstanceState(outState);
-//
-//        getSupportFragmentManager().putFragment(outState,"mHomeFragment",mHomeFragment);
-//    }
+    //Bottom navigation function
+    private void BottomNavigate(int id) {
+        String tag = String.valueOf(id);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-
-
-    private void setFrag(int n ){
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction =fragmentManager.beginTransaction();
-
-        switch (n){
-            case 0:
-                fragmentTransaction.replace(R.id.frame_layout, HomeFragment);
-                fragmentTransaction.commit();
-                break;
-            case 1:
-                fragmentTransaction.replace(R.id.frame_layout,ControlFragment);
-                fragmentTransaction.commit();
-                break;
-            case 2:
-                fragmentTransaction.replace(R.id.frame_layout,DataFragment);
-                fragmentTransaction.commit();
-                break;
-
+        Fragment currentFragment = fragmentManager.getPrimaryNavigationFragment();
+        if (currentFragment != null) {
+            fragmentTransaction.hide(currentFragment);
         }
 
+        Fragment fragment = fragmentManager.findFragmentByTag(tag);
+        if (fragment == null) {
+            if (id == R.id.action_home) {
+                fragment = new HomeFragment();
+
+            } else if (id == R.id.action_control) {
+
+                fragment = new ControlFragment();
+            } else {
+                fragment = new DataFragment();
+            }
+            fragmentTransaction.add(R.id.frame_layout, fragment, tag);
+        } else {
+            fragmentTransaction.show(fragment);
+        }
+
+        fragmentTransaction.setPrimaryNavigationFragment(fragment);
+        fragmentTransaction.setReorderingAllowed(true);
+        fragmentTransaction.commitNow();
+
     }
+
+
 }
