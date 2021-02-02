@@ -10,21 +10,18 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.utils.MPPointF;
 import com.github.mikephil.charting.utils.Utils;
 
-public class MyMarkerView extends MarkerView {
-    /**
-     * Constructor. Sets up the MarkerView with a custom layout resource.
-     *
-     * @param context
-     * @param layoutResource the layout resource to use for the MarkerView
-     */
+public class RangeMarkerView extends MarkerView {
 
     private TextView tvContent;
-    public MyMarkerView(Context context, int layoutResource) {
+
+    public RangeMarkerView(Context context, int layoutResource) {
         super(context, layoutResource);
 
         tvContent = (TextView) findViewById(R.id.tv_content);
     }
 
+    // callbacks everytime the MarkerView is redrawn, can be used to update the
+    // content (user-interface)
     @Override
     public void refreshContent(Entry e, Highlight highlight) {
 
@@ -45,4 +42,5 @@ public class MyMarkerView extends MarkerView {
     public MPPointF getOffset() {
         return new MPPointF(-(getWidth() / 2), -getHeight() + 2);
     }
+
 }

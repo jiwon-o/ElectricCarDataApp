@@ -1,6 +1,8 @@
 package com.example.electriccardataapp;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,25 +21,22 @@ public class HomeFragment extends Fragment {
     private View view;
     ImageView changeImage;
     boolean start;
-
-    // Animation animation_battery = AnimationUtils.loadAnimation(getContext(),R.anim.fade);
-
-
-  //  private int someStateValue;
-//    private final String SOME_VALUE_KEY = "someValueToSave";
-
+    TextView textBattery;
+    int i=0;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       view = inflater.inflate(R.layout.fragment_home_black, container, false);
-
-//        if (savedInstanceState != null) {
-//            someStateValue = savedInstanceState.getInt(SOME_VALUE_KEY);
-//            // Do something with value if needed
-//        }
+        view = inflater.inflate(R.layout.fragment_home_black, container, false);
 
         changeImage = (ImageView) view.findViewById(R.id.btn_red);
+        buttonAnimation(changeImage);
+        textBattery = (TextView)view.findViewById(R.id.textView_Battery);
+
+        return view;
+    }
+
+    private void buttonAnimation(ImageView changeImage){
         changeImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,13 +52,6 @@ public class HomeFragment extends Fragment {
                         @Override
                         public void onAnimationEnd(Animation animation) {
                             changeImage.setImageResource(R.drawable.btn_circle_green);
-
-                            //자동차 로그인 성공시 , 받아오는 데이터랑 일치한다면,
-                   /*
-                    if(== ???){
-                        changeImage.setImageResource(R.drawable.btn_circle_green);//초록색 버튼으로 바꾼다.
-                    }
-                   */
                         }
 
                         @Override
@@ -74,34 +67,47 @@ public class HomeFragment extends Fragment {
 
 
             }
+
+
         });
 
         animation_btn = new AlphaAnimation(0.0f,1.0f);
         animation_btn.setDuration(50);
         animation_btn.setRepeatMode(Animation.REVERSE);
         animation_btn.setRepeatCount(14);//Animation.INFINTE
-
-        return view;
     }
 
-//    @Override
-//    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
-//        if (savedInstanceState != null) {
-//            //Restore the fragment's state here
-//        }
-//
-//    }
-//
-//    @Override
-//    public void onSaveInstanceState(@NonNull Bundle outState) {
-//
-//
-//        //Save the fragment's state here
-//    //    outState.putInt(SOME_VALUE_KEY, someStateValue);
-//        super.onSaveInstanceState(outState);
-//    }
-//
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            updateThread();
+        }
+    };
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        Thread myThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while(true){
+                    try{
+                        handler.sendMessage(handler.obtainMessage());
+                        Thread.sleep(10);
+                    }catch (Throwable throwable){
+
+                    }
+                }
+            }
+        });
+        myThread.start();
+    }
+
+    private void updateThread(){
+        i++;
+        if(i<=98){
+            textBattery.setText(String.valueOf(i));
+        }
+    }
 
 }

@@ -64,7 +64,7 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/linearLayout1"
                 android:layout_centerHorizontal="true"
@@ -72,9 +72,8 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="@drawable/img_car_side" />
             </LinearLayout>
 
@@ -91,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="34dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="15dp"
                     android:fontFamily="@font/roboto_bold"
                     android:lineSpacingExtra="6sp"
                     android:text="Primary controls"
@@ -108,7 +107,8 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="50dp">
 
                         <FrameLayout
                             android:id="@+id/frame_layout_temperature"
@@ -116,14 +116,14 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
                                 android:src="@drawable/btn_black" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="13dp"
+                                android:layout_margin="10dp"
                                 android:fontFamily="@font/roboto_medium"
                                 android:letterSpacing="0.02"
                                 android:lineSpacingExtra="2sp"
@@ -136,7 +136,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
-                                android:layout_marginLeft="13dp"
+                                android:layout_margin="10dp"
                                 android:fontFamily="@font/roboto_medium"
                                 android:letterSpacing="0.03"
                                 android:lineSpacingExtra="5sp"
@@ -149,18 +149,18 @@
                         <FrameLayout
                             android:id="@+id/frame_layout_battery"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp">
 
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="16dp"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
                                 android:src="@drawable/btn_black" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="29dp"
+                                android:layout_margin="10dp"
                                 android:fontFamily="@font/roboto_medium"
                                 android:letterSpacing="0.02"
                                 android:lineSpacingExtra="2sp"
@@ -173,7 +173,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
-                                android:layout_marginLeft="29dp"
+                                android:layout_margin="10dp"
                                 android:fontFamily="@font/roboto_medium"
                                 android:letterSpacing="0.03"
                                 android:lineSpacingExtra="5sp"
@@ -186,18 +186,18 @@
                         <FrameLayout
                             android:id="@+id/frame_layout_energy"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp">
 
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="16dp"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
                                 android:src="@drawable/btn_black" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="29dp"
+                                android:layout_margin="10dp"
                                 android:fontFamily="@font/roboto_medium"
                                 android:letterSpacing="0.02"
                                 android:lineSpacingExtra="2sp"
@@ -210,7 +210,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
-                                android:layout_marginLeft="29dp"
+                                android:layout_margin="10dp"
                                 android:fontFamily="@font/roboto_medium"
                                 android:letterSpacing="0.03"
                                 android:lineSpacingExtra="5sp"
@@ -237,7 +237,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="34dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="15dp"
                     android:fontFamily="@font/roboto_bold"
                     android:lineSpacingExtra="6sp"
                     android:text="Secondary controls"
@@ -253,7 +253,8 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="50dp">
 
                         <FrameLayout
                             android:id="@+id/frame_layout_camera"
@@ -261,15 +262,14 @@
                             android:layout_height="wrap_content">
 
                             <ImageView
-
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
                                 android:src="@drawable/btn_black" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="13dp"
+                                android:layout_margin="10dp"
                                 android:fontFamily="@font/roboto_medium"
                                 android:letterSpacing="0.02"
                                 android:lineSpacingExtra="2sp"
@@ -282,7 +282,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
-                                android:layout_marginLeft="13dp"
+                                android:layout_margin="10dp"
                                 android:fontFamily="@font/roboto_medium"
                                 android:letterSpacing="0.03"
                                 android:lineSpacingExtra="5sp"
@@ -295,18 +295,18 @@
                         <FrameLayout
                             android:id="@+id/frame_layout_music"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp">
 
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="16dp"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
                                 android:src="@drawable/btn_black" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="29dp"
+                                android:layout_margin="10dp"
                                 android:fontFamily="@font/roboto_medium"
                                 android:letterSpacing="0.02"
                                 android:lineSpacingExtra="2sp"
@@ -319,7 +319,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
-                                android:layout_marginLeft="29dp"
+                                android:layout_margin="10dp"
                                 android:fontFamily="@font/roboto_medium"
                                 android:letterSpacing="0.03"
                                 android:lineSpacingExtra="5sp"
@@ -332,18 +332,18 @@
                         <FrameLayout
                             android:id="@+id/frame_layout_door"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp">
 
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="16dp"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
                                 android:src="@drawable/btn_black" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="29dp"
+                                android:layout_margin="10dp"
                                 android:fontFamily="@font/roboto_medium"
                                 android:letterSpacing="0.02"
                                 android:lineSpacingExtra="2sp"
@@ -356,7 +356,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="bottom"
-                                android:layout_marginLeft="29dp"
+                                android:layout_margin="10dp"
                                 android:fontFamily="@font/roboto_medium"
                                 android:letterSpacing="0.03"
                                 android:lineSpacingExtra="5sp"
