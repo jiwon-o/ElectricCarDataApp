@@ -1,375 +1,358 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_black"
-    android:orientation="vertical"
+    android:layout_gravity="center">
 
-    >
 
-        <RelativeLayout
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
+            android:fontFamily="@font/montserrat_regular"
+            android:lineSpacingExtra="4sp"
+            android:text="Osla"
+            android:textColor="@color/text_white"
+            android:textSize="15sp" />
 
-            <LinearLayout
-                android:id="@+id/linearLayout1"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:orientation="vertical"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:lineSpacingExtra="5sp"
+                android:text="Model"
+                android:textColor="@color/text_white"
+                android:textSize="24sp"
+                android:textStyle="normal" />
 
-                >
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:lineSpacingExtra="4sp"
-                    android:text="Osla"
-                    android:textColor="@color/text_white"
-                    android:textSize="15sp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_semi_bold"
-                        android:lineSpacingExtra="5sp"
-                        android:text="Model"
-                        android:textColor="@color/text_white"
-                        android:textSize="24sp"
-                        android:textStyle="normal" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="9dp"
-                        android:fontFamily="@font/montserrat_regular"
-                        android:lineSpacingExtra="5sp"
-                        android:text="A"
-                        android:textColor="@color/text_white"
-                        android:textSize="25sp"
-                        android:textStyle="normal" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/linearLayout1"
-                android:layout_centerHorizontal="true"
-                android:orientation="vertical">
+                android:layout_marginLeft="9dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:lineSpacingExtra="5sp"
+                android:text="A"
+                android:textColor="@color/text_white"
+                android:textSize="25sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img_car_side"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1" />
+
+
+    <TextView
+        android:id="@+id/primaryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/roboto_bold"
+        android:lineSpacingExtra="6sp"
+        android:text="Primary controls"
+        android:textColor="@color/text_white"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <HorizontalScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/primaryTextView"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/primaryTextView">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="50dp">
+
+            <FrameLayout
+                android:id="@+id/frame_layout_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/img_car_side" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/linearLayout2"
-                android:layout_centerHorizontal="true"
-                android:orientation="vertical">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_black" />
 
                 <TextView
-                    android:id="@+id/primaryTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="34dp"
-                    android:layout_marginBottom="15dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:lineSpacingExtra="6sp"
-                    android:text="Primary controls"
-                    android:textColor="@color/text_white"
-                    android:textSize="19sp"
-                    android:textStyle="bold" />
-
-                <HorizontalScrollView
-                    android:id="@+id/scrollView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/primaryTextView">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="50dp">
-
-                        <FrameLayout
-                            android:id="@+id/frame_layout_temperature"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <ImageView
-                                android:layout_width="150dp"
-                                android:layout_height="150dp"
-                                android:src="@drawable/btn_black" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:fontFamily="@font/roboto_medium"
-                                android:letterSpacing="0.02"
-                                android:lineSpacingExtra="2sp"
-                                android:text="Temperature"
-                                android:textColor="@color/white"
-                                android:textSize="13sp"
-                                android:textStyle="normal" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_margin="10dp"
-                                android:fontFamily="@font/roboto_medium"
-                                android:letterSpacing="0.03"
-                                android:lineSpacingExtra="5sp"
-                                android:text="A/C is ON"
-                                android:textColor="@color/white"
-                                android:textSize="11sp"
-                                android:textStyle="normal" />
-                        </FrameLayout>
-
-                        <FrameLayout
-                            android:id="@+id/frame_layout_battery"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp">
-
-                            <ImageView
-                                android:layout_width="150dp"
-                                android:layout_height="150dp"
-                                android:src="@drawable/btn_black" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:fontFamily="@font/roboto_medium"
-                                android:letterSpacing="0.02"
-                                android:lineSpacingExtra="2sp"
-                                android:text="Battery"
-                                android:textColor="@color/white"
-                                android:textSize="13sp"
-                                android:textStyle="normal" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_margin="10dp"
-                                android:fontFamily="@font/roboto_medium"
-                                android:letterSpacing="0.03"
-                                android:lineSpacingExtra="5sp"
-                                android:text="Saving mode"
-                                android:textColor="@color/white"
-                                android:textSize="11sp"
-                                android:textStyle="normal" />
-                        </FrameLayout>
-
-                        <FrameLayout
-                            android:id="@+id/frame_layout_energy"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp">
-
-                            <ImageView
-                                android:layout_width="150dp"
-                                android:layout_height="150dp"
-                                android:src="@drawable/btn_black" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:fontFamily="@font/roboto_medium"
-                                android:letterSpacing="0.02"
-                                android:lineSpacingExtra="2sp"
-                                android:text="Energy"
-                                android:textColor="@color/white"
-                                android:textSize="13sp"
-                                android:textStyle="normal" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_margin="10dp"
-                                android:fontFamily="@font/roboto_medium"
-                                android:letterSpacing="0.03"
-                                android:lineSpacingExtra="5sp"
-                                android:text="OFF"
-                                android:textColor="@color/white"
-                                android:textSize="11sp"
-                                android:textStyle="normal" />
-                        </FrameLayout>
-                    </LinearLayout>
-                </HorizontalScrollView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/linearLayout3"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="29dp"
-                android:orientation="vertical">
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="2sp"
+                    android:text="Temperature"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="normal" />
 
                 <TextView
-                    android:id="@+id/secondaryTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="34dp"
-                    android:layout_marginBottom="15dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:lineSpacingExtra="6sp"
-                    android:text="Secondary controls"
-                    android:textColor="@color/text_white"
-                    android:textSize="19sp"
-                    android:textStyle="bold" />
+                    android:layout_gravity="bottom"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:letterSpacing="0.03"
+                    android:lineSpacingExtra="5sp"
+                    android:text="A/C is ON"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
 
-                <HorizontalScrollView
+            <FrameLayout
+                android:id="@+id/frame_layout_battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp">
+
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/secondaryTextView">
+                    android:src="@drawable/btn_black" />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="50dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="2sp"
+                    android:text="Battery"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="normal" />
 
-                        <FrameLayout
-                            android:id="@+id/frame_layout_camera"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:letterSpacing="0.03"
+                    android:lineSpacingExtra="5sp"
+                    android:text="Saving mode"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
 
-                            <ImageView
-                                android:layout_width="150dp"
-                                android:layout_height="150dp"
-                                android:src="@drawable/btn_black" />
+            <FrameLayout
+                android:id="@+id/frame_layout_energy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:fontFamily="@font/roboto_medium"
-                                android:letterSpacing="0.02"
-                                android:lineSpacingExtra="2sp"
-                                android:text="Camera"
-                                android:textColor="@color/white"
-                                android:textSize="13sp"
-                                android:textStyle="normal" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_black" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_margin="10dp"
-                                android:fontFamily="@font/roboto_medium"
-                                android:letterSpacing="0.03"
-                                android:lineSpacingExtra="5sp"
-                                android:text="OFF"
-                                android:textColor="@color/white"
-                                android:textSize="11sp"
-                                android:textStyle="normal" />
-                        </FrameLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="2sp"
+                    android:text="Energy"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="normal" />
 
-                        <FrameLayout
-                            android:id="@+id/frame_layout_music"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:letterSpacing="0.03"
+                    android:lineSpacingExtra="5sp"
+                    android:text="OFF"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
 
-                            <ImageView
-                                android:layout_width="150dp"
-                                android:layout_height="150dp"
-                                android:src="@drawable/btn_black" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:fontFamily="@font/roboto_medium"
-                                android:letterSpacing="0.02"
-                                android:lineSpacingExtra="2sp"
-                                android:text="Music"
-                                android:textColor="@color/white"
-                                android:textSize="13sp"
-                                android:textStyle="normal" />
+    <TextView
+        android:id="@+id/secondaryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:lineSpacingExtra="6sp"
+        android:text="Secondary controls"
+        android:textColor="@color/text_white"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView1" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_margin="10dp"
-                                android:fontFamily="@font/roboto_medium"
-                                android:letterSpacing="0.03"
-                                android:lineSpacingExtra="5sp"
-                                android:text="Playlist #2"
-                                android:textColor="@color/white"
-                                android:textSize="11sp"
-                                android:textStyle="normal" />
-                        </FrameLayout>
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/secondaryTextView"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondaryTextView">
 
-                        <FrameLayout
-                            android:id="@+id/frame_layout_door"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="50dp">
 
-                            <ImageView
-                                android:layout_width="150dp"
-                                android:layout_height="150dp"
-                                android:src="@drawable/btn_black" />
+            <FrameLayout
+                android:id="@+id/frame_layout_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:fontFamily="@font/roboto_medium"
-                                android:letterSpacing="0.02"
-                                android:lineSpacingExtra="2sp"
-                                android:text="Door"
-                                android:textColor="@color/white"
-                                android:textSize="13sp"
-                                android:textStyle="normal" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_black" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_margin="10dp"
-                                android:fontFamily="@font/roboto_medium"
-                                android:letterSpacing="0.03"
-                                android:lineSpacingExtra="5sp"
-                                android:text="Close"
-                                android:textColor="@color/white"
-                                android:textSize="11sp"
-                                android:textStyle="normal" />
-                        </FrameLayout>
-                    </LinearLayout>
-                </HorizontalScrollView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="2sp"
+                    android:text="Camera"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="normal" />
 
-            </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:letterSpacing="0.03"
+                    android:lineSpacingExtra="5sp"
+                    android:text="OFF"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
 
-        </RelativeLayout>
+            <FrameLayout
+                android:id="@+id/frame_layout_music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp">
 
-</RelativeLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="2sp"
+                    android:text="Music"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:letterSpacing="0.03"
+                    android:lineSpacingExtra="5sp"
+                    android:text="Playlist #2"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frame_layout_door"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="2sp"
+                    android:text="Door"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:letterSpacing="0.03"
+                    android:lineSpacingExtra="5sp"
+                    android:text="Close"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

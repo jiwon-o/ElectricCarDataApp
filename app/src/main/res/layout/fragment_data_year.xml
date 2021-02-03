@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_centerInParent="true"
     android:background="@color/background_black"
     tools:context=".DataFragment_year">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout9"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <LinearLayout
                 android:id="@+id/linearLayout1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="27dp">
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -36,8 +49,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="139dp"
+                    android:layout_weight="1"
                     android:fontFamily="@font/montserrat_regular"
+                    android:gravity="right"
                     android:lineSpacingExtra="3sp"
                     android:text="total"
                     android:textColor="@color/text_white"
@@ -47,10 +61,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
                     android:fontFamily="@font/montserrat_medium"
                     android:lineSpacingExtra="4sp"
-                    android:text="417km"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity=""
+                    android:text="31,012km"
                     android:textColor="@color/text_white"
                     android:textSize="20sp"
                     android:textStyle="normal" />
@@ -59,8 +74,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginHorizontal="30dp"
+                android:layout_height="match_parent"
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
@@ -68,12 +82,24 @@
 
             </LinearLayout>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
+
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal">
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -88,7 +114,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="91dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
                     android:fontFamily="@font/montserrat_regular"
                     android:lineSpacingExtra="3sp"
                     android:text="AVG"
@@ -99,19 +126,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
                     android:fontFamily="@font/montserrat_medium"
                     android:lineSpacingExtra="4sp"
-                    android:text="68.9°F"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity=""
+                    android:text="67.4°F"
                     android:textColor="@color/text_white"
                     android:textSize="20sp"
                     android:textStyle="normal" />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginHorizontal="30dp"
+                android:layout_height="match_parent"
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
@@ -119,9 +147,9 @@
 
             </LinearLayout>
 
-
         </LinearLayout>
 
-    </ScrollView>
+    </LinearLayout>
 
-</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

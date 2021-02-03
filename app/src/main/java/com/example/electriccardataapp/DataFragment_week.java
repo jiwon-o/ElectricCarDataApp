@@ -126,6 +126,7 @@ public class DataFragment_week extends Fragment {
         xAxis_bar.setGranularity(1f); // only intervals of 1 day
         xAxis_bar.setLabelCount(7);
         xAxis_bar.setTextColor(Color.GRAY);
+        xAxis_bar.setTextSize(8);
         String[] xLables_bar = new String[]{"", "MON", "TUE", "WED", "THR", "FRI", "SAT", "SUN"};
 
         chart_bar.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xLables_bar));
@@ -134,7 +135,7 @@ public class DataFragment_week extends Fragment {
         YAxis yAxis_bar = chart_bar.getAxisLeft();
         yAxis_bar.setLabelCount(3, true);
         yAxis_bar.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
-        yAxis_bar.setTextSize(12);
+        yAxis_bar.setTextSize(10);
         yAxis_bar.setTextColor(Color.GRAY);
         yAxis_bar.setAxisMaximum(122f);
         yAxis_bar.setAxisMinimum(14f);
@@ -247,7 +248,7 @@ public class DataFragment_week extends Fragment {
             xAxis_line = chart_line.getXAxis();
             xAxis_line.setLabelCount(7, true);
             xAxis_line.setTextColor(Color.GRAY);
-            xAxis_line.setTextSize(11);
+            xAxis_line.setTextSize(8);
             xAxis_line.setPosition(XAxis.XAxisPosition.BOTTOM);
             xAxis_line.setDrawGridLines(false);
             xAxis_line.setAxisLineColor(Color.WHITE);
@@ -266,7 +267,7 @@ public class DataFragment_week extends Fragment {
             yAxis_line = chart_line.getAxisLeft();
             yAxis_line.setLabelCount(3, true);
             yAxis_line.setTextColor(Color.GRAY);
-            yAxis_line.setTextSize(12);
+            yAxis_line.setTextSize(10);
             yAxis_line.setAxisMaximum(80f);
             yAxis_line.setAxisMinimum(0f);
             yAxis_line.setGranularity(40f);

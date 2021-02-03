@@ -122,6 +122,7 @@ public class DataFragment_month extends Fragment {
         XAxis xAxis_bar = chart_bar.getXAxis();
         xAxis_bar.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis_bar.setDrawGridLines(false);
+        xAxis_bar.setTextSize(8);
         xAxis_bar.setGranularity(1f); // only intervals of 1 day
         xAxis_bar.setLabelCount(4);
         xAxis_bar.setTextColor(Color.GRAY);
@@ -133,7 +134,7 @@ public class DataFragment_month extends Fragment {
         YAxis yAxis_bar = chart_bar.getAxisLeft();
         yAxis_bar.setLabelCount(3, true);
         yAxis_bar.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
-        yAxis_bar.setTextSize(14);
+        yAxis_bar.setTextSize(10);
         yAxis_bar.setTextColor(Color.GRAY);
         yAxis_bar.setAxisMaximum(122f);
         yAxis_bar.setAxisMinimum(14f);
@@ -252,7 +253,7 @@ public class DataFragment_month extends Fragment {
             yAxis_line = chart_line.getAxisLeft();
             yAxis_line.setLabelCount(3, true);
             yAxis_line.setTextColor(Color.GRAY);
-            yAxis_line.setTextSize(12);
+            yAxis_line.setTextSize(10);
             yAxis_line.setAxisMaximum(80f);
             yAxis_line.setAxisMinimum(0f);
             yAxis_line.setGranularity(40f);

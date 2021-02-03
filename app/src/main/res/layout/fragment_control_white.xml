@@ -11,6 +11,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="20dp"
         android:layout_centerInParent="true">
 
         <LinearLayout
@@ -119,9 +120,9 @@
                         app:cardCornerRadius="15dp">
 
                         <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/btn_white" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/btn_black" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -159,10 +160,10 @@
                         android:layout_marginLeft="16dp">
 
                         <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
 
-                            android:src="@drawable/btn_white"/>
+                            android:src="@drawable/btn_black"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -199,10 +200,10 @@
                         android:layout_marginLeft="16dp">
 
                         <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
-                            android:src="@drawable/btn_white" />
+                            android:src="@drawable/btn_black" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -275,9 +276,9 @@
 
                         <ImageView
 
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/btn_white" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/btn_black" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -313,10 +314,9 @@
                         android:layout_marginLeft="16dp">
 
                         <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="16dp"
-                            android:src="@drawable/btn_white" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/btn_black" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -353,10 +353,10 @@
                         android:layout_marginLeft="16dp">
 
                         <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
-                            android:src="@drawable/btn_white" />
+                            android:src="@drawable/btn_black" />
 
                         <TextView
                             android:layout_width="wrap_content"

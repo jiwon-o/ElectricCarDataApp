@@ -125,6 +125,7 @@ public class DataFragment_year extends Fragment {
         xAxis_bar.setDrawGridLines(false);
         xAxis_bar.setGranularity(1f); // only intervals of 1 day
         xAxis_bar.setLabelCount(12);
+        xAxis_bar.setTextSize(8);
         xAxis_bar.setTextColor(Color.GRAY);
         String[] xLables_bar = new String[]{"", "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"};
 
@@ -252,7 +253,7 @@ public class DataFragment_year extends Fragment {
             xAxis_line = chart_line.getXAxis();
             xAxis_line.setLabelCount(12, true);
             xAxis_line.setTextColor(Color.GRAY);
-            xAxis_line.setTextSize(10);
+            xAxis_line.setTextSize(8);
             xAxis_line.setPosition(XAxis.XAxisPosition.BOTTOM);
             xAxis_line.setDrawGridLines(false);
             xAxis_line.setAxisLineColor(Color.WHITE);
@@ -271,7 +272,7 @@ public class DataFragment_year extends Fragment {
             yAxis_line = chart_line.getAxisLeft();
             yAxis_line.setLabelCount(3, true);
             yAxis_line.setTextColor(Color.GRAY);
-            yAxis_line.setTextSize(12);
+            yAxis_line.setTextSize(10);
             yAxis_line.setAxisMaximum(4000f);
             yAxis_line.setAxisMinimum(0f);
             yAxis_line.setGranularity(2000f);
