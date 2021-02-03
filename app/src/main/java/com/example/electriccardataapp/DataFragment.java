@@ -38,6 +38,8 @@ public class DataFragment extends Fragment {
 
         viewPager.setAdapter(adapter);
 
+        viewPager.setOffscreenPageLimit(2);
+
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
