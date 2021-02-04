@@ -1,6 +1,7 @@
 package com.example.electriccardataapp;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -13,15 +14,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class TemperatureActivity extends AppCompatActivity {
 
-    ImageView redButtonImage;
+    ImageView blackButtonImage;
     ImageView backImage;
-    TextView redButtonText1;
-    TextView redButtonText2;
+    TextView blackButtonText1;
+    TextView blackButtonText2;
     TextView temperatureNum;
     ImageView upButtonImage;
     ImageView downButtonImage;
+    ImageView autoButtonImage;
+    ImageView coolButtonImage;
+    ImageView dryButtonImage;
+    ImageView autoImage;
+    ImageView coolImage;
+    ImageView dryImage;
+    TextView autoText;
+    TextView coolText;
+    TextView dryText;
 
-    int btnClick;
+
+    int btnClick=0;
     int count=70;
     boolean i = true;
 
@@ -32,16 +43,30 @@ public class TemperatureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_temperature);
 
         backImage = findViewById(R.id.image_back);
-        redButtonImage = findViewById(R.id.temperature_red_btn);
-        redButtonText1 = findViewById(R.id.red_btn_text1);
-        redButtonText2 = findViewById(R.id.red_btn_text2);
+        blackButtonImage = findViewById(R.id.temperature_black_btn);
+        blackButtonText1 = findViewById(R.id.black_btn_text1);
+        blackButtonText2 = findViewById(R.id.black_btn_text2);
         temperatureNum = findViewById(R.id.temperature_Number);
         upButtonImage = findViewById(R.id.temperature_up_btn);
         downButtonImage = findViewById(R.id.temperature_down_btn);
+        autoButtonImage = findViewById(R.id.temperature_auto_btn);
+        coolButtonImage = findViewById(R.id.temperature_cool_btn);
+        dryButtonImage = findViewById(R.id.temperature_dry_btn);
+        autoImage = findViewById(R.id.img_auto);
+        coolImage = findViewById(R.id.img_cool);
+        dryImage = findViewById(R.id.img_dry);
+        autoText = findViewById(R.id.tv_auto);
+        coolText = findViewById(R.id.tv_cool);
+        dryText = findViewById(R.id.tv_dry);
+
 
         backButton(backImage);
 
-        temperatureButton(redButtonImage);
+        temperatureButton(blackButtonImage);
+
+        autoButton(autoButtonImage);
+        coolButton(coolButtonImage);
+        dryButton(dryButtonImage);
 
         upDownButton upDownButton = new upDownButton();
         temperatureNum.setText(count+"");
@@ -52,7 +77,6 @@ public class TemperatureActivity extends AppCompatActivity {
 
 
     private void backButton(ImageView backImage){
-        btnClick=0;
         backImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,20 +85,19 @@ public class TemperatureActivity extends AppCompatActivity {
         });
     }
 
-    private void temperatureButton(ImageView redButtonImage){
-        redButtonImage.setOnClickListener(new View.OnClickListener(){
+    private void temperatureButton(ImageView blackButtonImage){
+        blackButtonImage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
                 if(btnClick%2==0) {
-                    redButtonImage.setImageResource(R.drawable.btn_circle_green);
-                    redButtonText1.setText("A/C is ON");
-                    redButtonText2.setText("Tap the button to off");
+                    blackButtonImage.setImageResource(R.drawable.btn_circle_red);
+                    blackButtonText1.setText("A/C is ON");
+                    blackButtonText2.setText("Tap the button to off");
                     btnClick++;
                 }else if(btnClick%2==1){
-                    redButtonImage.setImageResource(R.drawable.btn_circle_red);
-                    redButtonText1.setText("A/C is OFF");
-                    redButtonText2.setText("Tap the button to on");
+                    blackButtonImage.setImageResource(R.drawable.btn_circle_black);
+                    blackButtonText1.setText("A/C is OFF");
+                    blackButtonText2.setText("Tap the button to on");
                     btnClick++;
                 }
 
@@ -99,22 +122,23 @@ public class TemperatureActivity extends AppCompatActivity {
             if(btnClick%2==1) {
                 switch (v.getId()) {
                     case R.id.temperature_up_btn: {
-                        count = count + 1;
+                        if (count < 85) {
+                            count = count + 1;
+                        }
                         temperatureNum.setText(count + "");
                         break;
                     }
                     case R.id.temperature_down_btn: {
-                        count = count - 1;
+                        if (count > 65) {
+                            count = count - 1;
+                        }
                         temperatureNum.setText(count + "");
                         break;
                     }
                 }
             }else if(btnClick%2==0){
                 switch (v.getId()) {
-                    case R.id.temperature_up_btn: {
-                        setCustomToast(getApplicationContext());
-                        break;
-                    }
+                    case R.id.temperature_up_btn:
                     case R.id.temperature_down_btn: {
                         setCustomToast(getApplicationContext());
                         break;
@@ -122,6 +146,58 @@ public class TemperatureActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+
+    private void autoButton(ImageView autoButtonImage){
+        autoButtonImage.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if (i == true){
+                    autoImage.setImageResource(R.drawable.ic_mode_auto_red);
+                    autoText.setTextColor(Color.RED);
+                    i = false;
+                }else {
+                    autoImage.setImageResource(R.drawable.ic_mode_auto);
+                    autoText.setTextColor(Color.WHITE);
+                    i = true;
+                }
+            }
+        });
+    }
+
+    private void coolButton(ImageView coolButtonImage){
+        coolButtonImage.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if (i == true){
+                    coolImage.setImageResource(R.drawable.ic_mode_cool_red);
+                    coolText.setTextColor(Color.RED);
+                    i = false;
+                }else {
+                    coolImage.setImageResource(R.drawable.ic_mode_cool);
+                    coolText.setTextColor(Color.WHITE);
+                    i = true;
+                }
+            }
+        });
+    }
+
+    private void dryButton(ImageView dryButtonImage){
+        dryButtonImage.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if (i == true){
+                    dryImage.setImageResource(R.drawable.ic_mode_dry_red);
+                    dryText.setTextColor(Color.RED);
+                    i = false;
+                }else {
+                    dryImage.setImageResource(R.drawable.ic_mode_dry);
+                    dryText.setTextColor(Color.WHITE);
+                    i = true;
+                }
+            }
+        });
     }
 
   

@@ -74,7 +74,7 @@
                 android:src="@drawable/bg_btn_black" />
 
             <TextView
-                android:id="@+id/red_btn_text1"
+                android:id="@+id/black_btn_text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="27dp"
@@ -87,7 +87,7 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/red_btn_text2"
+                android:id="@+id/black_btn_text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
@@ -100,12 +100,12 @@
                 android:textStyle="normal" />
 
             <ImageView
-                android:id="@+id/temperature_red_btn"
+                android:id="@+id/temperature_black_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="12dp"
-                android:src="@drawable/btn_circle_red" />
+                android:src="@drawable/btn_circle_black" />
         </FrameLayout>
     </LinearLayout>
 
@@ -219,19 +219,21 @@
             android:onClick="modeClick">
 
             <ImageView
+                android:id="@+id/temperature_auto_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/btn_mode" />
 
 
             <ImageView
-                android:id="@+id/autoImage"
+                android:id="@+id/img_auto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_mode_auto" />
 
             <TextView
+                android:id="@+id/tv_auto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|bottom"
@@ -253,18 +255,20 @@
             android:onClick="modeClick">
 
             <ImageView
+                android:id="@+id/temperature_cool_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/btn_mode" />
 
             <ImageView
-                android:id="@+id/coolImage"
+                android:id="@+id/img_cool"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_mode_cool" />
 
             <TextView
+                android:id="@+id/tv_cool"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|bottom"
@@ -286,18 +290,20 @@
             android:onClick="modeClick">
 
             <ImageView
+                android:id="@+id/temperature_dry_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/btn_mode" />
 
             <ImageView
-                android:id="@+id/dryImage"
+                android:id="@+id/img_dry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_mode_dry" />
 
             <TextView
+                android:id="@+id/tv_dry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|bottom"

@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.menu_orangedigit"
+        applicationId "com.example.electriccardataapp"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
