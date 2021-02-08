@@ -22,7 +22,7 @@ public class DataFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_data_black, container, false);
+        View view = inflater.inflate(R.layout.fragment_data, container, false);
 
         TabLayout tabLayout = view.findViewById(R.id.tab_layout_data);
 
@@ -38,7 +38,7 @@ public class DataFragment extends Fragment {
 
         viewPager.setAdapter(adapter);
 
-        viewPager.setOffscreenPageLimit(2);
+        viewPager.setOffscreenPageLimit(2); //No reset
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 

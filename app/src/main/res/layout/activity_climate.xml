@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_black"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+
+        <ImageView
+            android:id="@+id/image_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back_arrow"
+            app:tint="@color/text_white" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Climate"
+            android:textColor="@color/text_white"
+            android:textSize="19sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="48dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/image_back"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/bg_btn_black" />
+
+                <TextView
+                    android:id="@+id/black_btn_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:lineSpacingExtra="4sp"
+                    android:text="A/C is OFF"
+                    android:textColor="@color/text_white"
+                    android:textSize="19sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/black_btn_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="51dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:lineSpacingExtra="3sp"
+                    android:text="Tap the button to on"
+                    android:textColor="@color/text_white"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <ImageView
+                    android:id="@+id/temperature_black_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/btn_circle_black" />
+
+            </FrameLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/subTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout2"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/roboto_bold"
+            android:lineSpacingExtra="4sp"
+            android:text="Temp"
+            android:textColor="@color/text_white"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/subTextView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subTextView1">
+
+            <ImageView
+                android:id="@+id/temperature_up_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:padding="10dp"
+                android:src="@drawable/btn_arrow_up" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/temperature_Number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="13sp"
+                    android:text=""
+                    android:textColor="@color/text_white"
+                    android:textSize="58sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:gravity="center_horizontal"
+                    android:lineSpacingExtra="13sp"
+                    android:text="℉"
+                    android:textColor="@color/text_white"
+                    android:textSize="58sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/temperature_down_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:padding="10dp"
+                android:src="@drawable/btn_arrow_down" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/subTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout4"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/roboto_bold"
+            android:lineSpacingExtra="4sp"
+            android:text="Mode"
+            android:textColor="@color/text_white"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/subTextView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subTextView2">
+
+            <FrameLayout
+                android:id="@+id/temperature_auto_frame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="modeClick">
+
+                <ImageView
+                    android:id="@+id/temperature_auto_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_mode" />
+
+
+                <ImageView
+                    android:id="@+id/img_auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_mode_auto" />
+
+                <TextView
+                    android:id="@+id/tv_auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="33dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="1sp"
+                    android:text="Auto"
+                    android:textColor="@color/text_white"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/temperature_cool_frame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:onClick="modeClick">
+
+                <ImageView
+                    android:id="@+id/temperature_cool_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_mode" />
+
+                <ImageView
+                    android:id="@+id/img_cool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_mode_cool" />
+
+                <TextView
+                    android:id="@+id/tv_cool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="33dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="1sp"
+                    android:text="Cool"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/temperature_dry_frame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:onClick="modeClick">
+
+                <ImageView
+                    android:id="@+id/temperature_dry_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_mode" />
+
+                <ImageView
+                    android:id="@+id/img_dry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_mode_dry" />
+
+                <TextView
+                    android:id="@+id/tv_dry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="33dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="1sp"
+                    android:text="Dry"
+                    android:textColor="@color/text_white"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

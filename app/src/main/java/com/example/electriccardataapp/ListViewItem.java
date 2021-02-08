@@ -1,20 +1,23 @@
 package com.example.electriccardataapp;
 
+// you can add listview item here.
 public class ListViewItem {
-    private String titleStr ;
-    private String descStr ;
+    private String titleStr;
+    private String descStr;
 
     public void setTitle(String title) {
-        titleStr = title ;
+        titleStr = title;
     }
+
     public void setDesc(String desc) {
-        descStr = desc ;
+        descStr = desc;
     }
 
     public String getTitle() {
-        return this.titleStr ;
+        return this.titleStr;
     }
+
     public String getDesc() {
-        return this.descStr ;
+        return this.descStr;
     }
 }

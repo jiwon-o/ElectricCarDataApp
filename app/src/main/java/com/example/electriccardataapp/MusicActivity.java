@@ -20,7 +20,6 @@ import androidx.core.content.ContextCompat;
 public class MusicActivity extends AppCompatActivity {
 
     ImageView backImage;
-
     ImageView playImage;
 
     boolean i = true;
@@ -29,8 +28,10 @@ public class MusicActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
+
         backImage = findViewById(R.id.image_back);
 
+        // Back button
         backImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +39,7 @@ public class MusicActivity extends AppCompatActivity {
             }
         });
 
-        ListView listview ;
+        ListView listview;
         ListViewAdapter adapter;
 
         adapter = new ListViewAdapter();
@@ -46,6 +47,7 @@ public class MusicActivity extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.lv_music);
         listview.setAdapter(adapter);
 
+        //add list of Music player here.
         adapter.addItem("Schubert : impromptu 90-2", "28:07");
         adapter.addItem("Piano Sonata no.8 - II", "03:04");
         adapter.addItem("Moonlight Sonata", "05:25");
@@ -59,15 +61,15 @@ public class MusicActivity extends AppCompatActivity {
         adapter.addItem("Variations On The Cannon", "03:02");
 
 
-        // 위에서 생성한 listview에 클릭 이벤트 핸들러 정의.
+        // Define click event handler in the listview created above
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView parent, View v, int position, long id) {
                 // get item
-                ListViewItem item = (ListViewItem) parent.getItemAtPosition(position) ;
+                ListViewItem item = (ListViewItem) parent.getItemAtPosition(position);
 
-                String titleStr = item.getTitle() ;
-                String descStr = item.getDesc() ;
+                String titleStr = item.getTitle();
+                String descStr = item.getDesc();
 
                 // TODO : use item data.
             }
@@ -79,19 +81,18 @@ public class MusicActivity extends AppCompatActivity {
     }
 
     private void playButton(ImageView playImage) {
-        playImage.setOnClickListener(new View.OnClickListener(){
+        playImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (i == true){
+                if (i == true) {
                     playImage.setImageResource(R.drawable.ic_play_pause);
                     i = false;
-                }else {
+                } else {
                     playImage.setImageResource(R.drawable.ic_play_red);
                     i = true;
                 }
             }
         });
     }
-
 
 }

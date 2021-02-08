@@ -11,14 +11,13 @@
         android:id="@+id/image_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:layout_marginStart="6dp"
         android:layout_marginTop="6dp"
+        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back_arrow"
-        app:tint="@color/text_white"/>
-
+        app:tint="@color/text_white" />
 
     <TextView
         android:id="@+id/textView3"
@@ -66,8 +65,7 @@
             android:id="@+id/lv_music"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:listSelector="#1d2123"/>
-
+            android:listSelector="@color/gray" />
 
     </LinearLayout>
 
@@ -75,9 +73,9 @@
         android:id="@+id/linearLayout7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:background="@color/dark_gray"
         android:gravity="center"
-        android:background="#1d2123"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -90,32 +88,31 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
             android:orientation="vertical"
             android:paddingLeft="20dp"
-            android:paddingBottom="5dp"
-            android:gravity="center_vertical"
-            android:layout_weight="1"
-            >
+            android:paddingBottom="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
-                android:textStyle="normal"
-                android:textSize="15sp"
-                android:textColor="#ffffff"
                 android:lineSpacingExtra="5sp"
-                android:text="Ah vous dirai-je, Maman" />
+                android:text="Ah vous dirai-je, Maman"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:textStyle="normal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
-                android:textStyle="normal"
-                android:textSize="12sp"
-                android:textColor="#ffffff"
                 android:lineSpacingExtra="4sp"
-                android:text="Mozart"/>
+                android:text="Mozart"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:textStyle="normal" />
         </LinearLayout>
 
         <ImageView
@@ -123,10 +120,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingLeft="10dp"
-            android:paddingBottom="5dp"
             android:paddingRight="20dp"
+            android:paddingBottom="5dp"
             android:src="@drawable/ic_play_red" />
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

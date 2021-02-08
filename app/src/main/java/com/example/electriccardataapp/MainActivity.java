@@ -15,8 +15,8 @@ import android.view.WindowManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-    private BottomNavigationView mBottomNV;
 
+    private BottomNavigationView mBottomNV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Navigation Listener
         mBottomNV = findViewById(R.id.bottom_navigation_view);
-        mBottomNV.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() { //NavigationItemSelect
+        mBottomNV.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 BottomNavigate(menuItem.getItemId());
@@ -51,9 +51,7 @@ public class MainActivity extends AppCompatActivity {
         if (fragment == null) {
             if (id == R.id.action_home) {
                 fragment = new HomeFragment();
-
             } else if (id == R.id.action_control) {
-
                 fragment = new ControlFragment();
             } else {
                 fragment = new DataFragment();
@@ -68,6 +66,5 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commitNow();
 
     }
-
 
 }

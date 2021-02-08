@@ -21,12 +21,15 @@ import java.util.ArrayList;
 public class BatteryActivity extends AppCompatActivity {
 
     ImageView backImage;
-    private PieChart chart;
+    private PieChart chart_pie;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battery);
+
+        // Back button
         backImage = findViewById(R.id.image_back);
 
         backImage.setOnClickListener(new View.OnClickListener() {
@@ -36,41 +39,42 @@ public class BatteryActivity extends AppCompatActivity {
             }
         });
 
-        chart = findViewById(R.id.chart_pie);
-        chart.setUsePercentValues(true);
-        chart.getDescription().setEnabled(false);
-        chart.setExtraOffsets(5, 10, 5, 5);
 
-        chart.setDragDecelerationFrictionCoef(0.95f);
+        // You can customize the pie chart of battery graph here.
+        chart_pie = findViewById(R.id.chart_pie);
+        chart_pie.setUsePercentValues(true);
+        chart_pie.getDescription().setEnabled(false);
+        chart_pie.setExtraOffsets(5, 10, 5, 5);
 
-        chart.setDrawHoleEnabled(true);
-        chart.setHoleColor(Color.BLACK);
+        chart_pie.setDragDecelerationFrictionCoef(0.95f);
 
-        chart.setTransparentCircleColor(Color.WHITE);
-        chart.setTransparentCircleAlpha(0);
+        chart_pie.setDrawHoleEnabled(true);
+        chart_pie.setHoleColor(Color.BLACK);
 
-        chart.setHoleRadius(58f);
-        chart.setTransparentCircleRadius(65f);
+        chart_pie.setTransparentCircleColor(Color.WHITE);
+        chart_pie.setTransparentCircleAlpha(0);
 
-        chart.setRotationAngle(0);
+        chart_pie.setHoleRadius(58f);
+        chart_pie.setTransparentCircleRadius(65f);
+
+        chart_pie.setRotationAngle(0);
         // enable rotation of the chart by touch
-        chart.setRotationEnabled(true);
-        chart.setHighlightPerTapEnabled(true);
+        chart_pie.setRotationEnabled(true);
+        chart_pie.setHighlightPerTapEnabled(true);
 
-        chart.animateY(1400, Easing.EaseInOutQuad);
-        // chart.spin(2000, 0, 360);
+        chart_pie.animateY(1400, Easing.EaseInOutQuad);
+        // chart_pie.spin(2000, 0, 360);
 
-        chart.getLegend().setEnabled(false);
-
-
+        chart_pie.getLegend().setEnabled(false);
 
         // entry label styling
-        chart.setEntryLabelColor(Color.WHITE);
-        chart.setEntryLabelTextSize(11f);
+        chart_pie.setEntryLabelColor(Color.WHITE);
+        chart_pie.setEntryLabelTextSize(11f);
 
         setData(4, 25);
     }
 
+    // get data here
     private void setData(int count, float range) {
         ArrayList<PieEntry> entries = new ArrayList<>();
 
@@ -98,11 +102,11 @@ public class BatteryActivity extends AppCompatActivity {
         data.setValueFormatter(new PercentFormatter());
         data.setValueTextSize(16f);
         data.setValueTextColor(Color.WHITE);
-        chart.setData(data);
+        chart_pie.setData(data);
 
         // undo all highlights
-        chart.highlightValues(null);
+        chart_pie.highlightValues(null);
 
-        chart.invalidate();
+        chart_pie.invalidate();
     }
 }

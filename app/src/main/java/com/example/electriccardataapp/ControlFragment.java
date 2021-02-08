@@ -10,8 +10,7 @@ import android.widget.FrameLayout;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class ControlFragment extends Fragment
-{
+public class ControlFragment extends Fragment {
     private View view;
     FrameLayout frameLayoutTemperature;
     FrameLayout frameLayoutBattery;
@@ -24,64 +23,64 @@ public class ControlFragment extends Fragment
 
     @Nullable
     @Override
-    public View onCreateView( LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_control_black,container,false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_control, container, false);
 
-        frameLayoutTemperature = (FrameLayout)view.findViewById(R.id.frame_layout_temperature);
+        frameLayoutTemperature = (FrameLayout) view.findViewById(R.id.frame_layout_temperature);
         frameLayoutTemperature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(getActivity(),TemperatureActivity.class);
+                intent = new Intent(getActivity(), ClimateActivity.class);
                 startActivity(intent);
             }
         });
 
-        frameLayoutBattery = (FrameLayout)view.findViewById(R.id.frame_layout_battery);
+        frameLayoutBattery = (FrameLayout) view.findViewById(R.id.frame_layout_battery);
         frameLayoutBattery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(getActivity(),BatteryActivity.class);
+                intent = new Intent(getActivity(), BatteryActivity.class);
                 startActivity(intent);
             }
         });
 
-        frameLayoutCamera = (FrameLayout)view.findViewById(R.id.frame_layout_camera);
+        frameLayoutCamera = (FrameLayout) view.findViewById(R.id.frame_layout_camera);
         frameLayoutCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(getActivity(),CameraActivity.class);
+                intent = new Intent(getActivity(), CameraActivity.class);
                 startActivity(intent);
             }
         });
 
-        frameLayoutEnergy = (FrameLayout)view.findViewById(R.id.frame_layout_energy);
+        frameLayoutEnergy = (FrameLayout) view.findViewById(R.id.frame_layout_energy);
         frameLayoutEnergy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(getActivity(),EnergyActivity.class);
+                intent = new Intent(getActivity(), LightActivity.class);
                 startActivity(intent);
             }
         });
 
-        frameLayoutMusic = (FrameLayout)view.findViewById(R.id.frame_layout_music);
+        frameLayoutMusic = (FrameLayout) view.findViewById(R.id.frame_layout_music);
         frameLayoutMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(getActivity(),MusicActivity.class);
+                intent = new Intent(getActivity(), MusicActivity.class);
                 startActivity(intent);
             }
         });
 
-        frameLayoutDoor = (FrameLayout)view.findViewById(R.id.frame_layout_door);
+        frameLayoutDoor = (FrameLayout) view.findViewById(R.id.frame_layout_door);
         frameLayoutDoor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(getActivity(),DoorActivity.class);
+                intent = new Intent(getActivity(), DoorActivity.class);
                 startActivity(intent);
             }
         });
 
-        return  view;
+        return view;
     }
 
 

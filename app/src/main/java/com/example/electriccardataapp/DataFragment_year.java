@@ -101,6 +101,7 @@ public class DataFragment_year extends Fragment {
 
         chart_bar = view.findViewById(R.id.chart_bar);
 
+        // You can customize the bar chart of temperature graph here.
         chart_bar.setDrawBarShadow(false);
         chart_bar.setDrawValueAboveBar(true);
 
@@ -115,7 +116,7 @@ public class DataFragment_year extends Fragment {
 
         chart_bar.setDrawGridBackground(false);
         chart_bar.setBackgroundColor(Color.rgb(29, 33, 35));
-        // chart.setDrawYLabels(false);
+        // chart_bar.setDrawYLabels(false);
 
         chart_bar.animateXY(2000, 2000);
 
@@ -183,17 +184,16 @@ public class DataFragment_year extends Fragment {
 
         } else {
             set2 = new BarDataSet(value, "");
-//
+
             ArrayList<IBarDataSet> dataSet = new ArrayList<>();
             dataSet.add(set2);
-//
+
             BarData datas = new BarData(dataSet);
             datas.setValueTextSize(10f);
             datas.setBarWidth(0.5f);
             set2.setColor(Color.rgb(76, 132, 255));
             set2.setDrawValues(!set2.isDrawValuesEnabled()); //Invisible numbers
             barChart.setData(datas);
-
 
         }
     }
@@ -203,7 +203,7 @@ public class DataFragment_year extends Fragment {
     private void setChart_line() {
 
         LineChart chart_line;
-        {   // // Chart Style // //
+        {   // // Style of line chart in range graph // //
             chart_line = view.findViewById(R.id.chart_line);
 
             // background color
@@ -215,8 +215,6 @@ public class DataFragment_year extends Fragment {
             // enable touch gestures
             chart_line.setTouchEnabled(true);
 
-            // set listeners
-//            chart.setOnChartValueSelectedListener(this);
             chart_line.setDrawGridBackground(false);
 
             // create marker to display box when values are selected
@@ -291,6 +289,7 @@ public class DataFragment_year extends Fragment {
         chart_line.invalidate();
     }
 
+    // get data here
     private void setData_line(int count, int range) {
 
         ArrayList<Entry> values = new ArrayList<>();
@@ -301,36 +300,36 @@ public class DataFragment_year extends Fragment {
             values.add(new Entry(i, val, getResources()));
         }
 
-        LineDataSet set1;
+        LineDataSet set;
 
         if (lineChart.getData() != null &&
                 lineChart.getData().getDataSetCount() > 0) {
-            set1 = (LineDataSet) lineChart.getData().getDataSetByIndex(0);
-            set1.setValues(values);
-            set1.notifyDataSetChanged();
+            set = (LineDataSet) lineChart.getData().getDataSetByIndex(0);
+            set.setValues(values);
+            set.notifyDataSetChanged();
             lineChart.getData().notifyDataChanged();
             lineChart.notifyDataSetChanged();
         } else {
 
-            set1 = new LineDataSet(values, "");
+            set = new LineDataSet(values, "");
 
-            set1.setMode(LineDataSet.Mode.CUBIC_BEZIER);
-            set1.setCubicIntensity(0.2f);
-            set1.setDrawFilled(true);
-            set1.setDrawCircles(true);
-            set1.setDrawValues(!set1.isDrawValuesEnabled());
-            set1.setLineWidth(1.4f);
+            set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+            set.setCubicIntensity(0.2f);
+            set.setDrawFilled(true);
+            set.setDrawCircles(true);
+            set.setDrawValues(!set.isDrawValuesEnabled());
+            set.setLineWidth(1.4f);
 
-            set1.setCircleRadius(3f);
-            set1.setCircleHoleColor(Color.rgb(29, 33, 35));
-            set1.setCircleColor(Color.rgb(234, 35, 38));
-            set1.setHighLightColor(Color.WHITE);
-            set1.setColor(Color.rgb(234, 35, 38));
-            set1.setFillColor(Color.GRAY);
-            set1.setFillAlpha(80);
-            set1.setDrawHorizontalHighlightIndicator(false);
+            set.setCircleRadius(3f);
+            set.setCircleHoleColor(Color.rgb(29, 33, 35));
+            set.setCircleColor(Color.rgb(234, 35, 38));
+            set.setHighLightColor(Color.WHITE);
+            set.setColor(Color.rgb(234, 35, 38));
+            set.setFillColor(Color.GRAY);
+            set.setFillAlpha(80);
+            set.setDrawHorizontalHighlightIndicator(false);
 
-            set1.setFillFormatter(new IFillFormatter() {
+            set.setFillFormatter(new IFillFormatter() {
                 @Override
                 public float getFillLinePosition(ILineDataSet dataSet, LineDataProvider dataProvider) {
                     return lineChart.getAxisLeft().getAxisMinimum();
@@ -342,13 +341,13 @@ public class DataFragment_year extends Fragment {
             if (Utils.getSDKInt() >= 18) {
                 // drawables only supported on api level 18 and above
                 Drawable drawable = ContextCompat.getDrawable(getContext(), R.drawable.fade_red);
-                set1.setFillDrawable(drawable);
+                set.setFillDrawable(drawable);
             } else {
-                set1.setFillColor(Color.BLACK);
+                set.setFillColor(Color.BLACK);
             }
 
             ArrayList<ILineDataSet> dataSets = new ArrayList<>();
-            dataSets.add(set1); // add the data sets
+            dataSets.add(set); // add the data sets
 
             // create a data object with the data sets
             LineData data = new LineData(dataSets);

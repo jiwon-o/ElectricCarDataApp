@@ -10,6 +10,7 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.utils.MPPointF;
 import com.github.mikephil.charting.utils.Utils;
 
+// A speech bubble indicating the y-axis when the temperature graph is pressed
 public class TemperatureMarkerView extends MarkerView {
 
     private TextView tvContent;
@@ -26,7 +27,6 @@ public class TemperatureMarkerView extends MarkerView {
     public void refreshContent(Entry e, Highlight highlight) {
 
         if (e instanceof CandleEntry) {
-
             CandleEntry ce = (CandleEntry) e;
 
             tvContent.setText("" + Utils.formatNumber(ce.getHigh(), 0, true) + "℉");
