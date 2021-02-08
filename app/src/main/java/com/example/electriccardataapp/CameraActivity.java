@@ -43,27 +43,32 @@ import java.util.Locale;
 
 public class CameraActivity extends AppCompatActivity {
 
-    ImageView backImage;
-    TextView dateTextView;
-    BroadcastReceiver broadcastReceiver;
-    TextView recTextView;
+    private ImageView backImage;
+    private TextView dateTextView;
+    private BroadcastReceiver broadcastReceiver;
+    private TextView recTextView;
+
 
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd a hh:mm", Locale.ENGLISH);
 
-    private String cameraId;
+    private String cameraId;//Camera front or rear set variables
     private CameraDevice cameraDevice;
     private CameraCaptureSession cameraCaptureSession;
     private CaptureRequest.Builder captureRequestBuilder;
+
+    //Camera View Object
     private TextureView textureView;
+
+    private Size imageDimensions;
+    private Handler mBackgroundHandler;
+    private HandlerThread mBackgroundThread;
+    //Camera permission related variable values
     private int REQUEST_CODE_PERMISSIONS = 1001;
     private final String[] REQUIRED_PERMISSIONS = new String[]{"android.permission.CAMERA"};
 
-    private Size imageDimensions;
 
-    private Handler mBackgroundHandler;
-    private HandlerThread mBackgroundThread;
+    //Change the status of the camera to portrait. If you want it horizontally, remove static.
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
-
     static {
         ORIENTATIONS.append(Surface.ROTATION_0, 90);
         ORIENTATIONS.append(Surface.ROTATION_90, 0);
@@ -78,29 +83,64 @@ public class CameraActivity extends AppCompatActivity {
         backImage = findViewById(R.id.image_back);
         dateTextView = findViewById(R.id.dateTextview);
         recTextView = findViewById(R.id.recTextView);
+        textureView = (TextureView)findViewById(R.id.camera);
 
+        //Backward Button Operation function
+        backButton(backImage);
+        //Recording Animation function
         flashAnimation(recTextView);
 
-        //default date set
+        //current date set
         Date time = new Date();
         String timeString = dateFormat.format(time);
         dateTextView.setText(timeString);
 
-        textureView = (TextureView) findViewById(R.id.camera);
+        //Request Camera Permission from User at First Start of Screen
+        if (allPermissionsGranted()) {
+            startCamera();
+        } else {
+            ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS);
+        }
+    }
 
-        // Back button
+    //backbutton function
+    private void backButton(ImageView backImage){
         backImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+    }
 
-        if (allPermissionsGranted()) {
-            startCamera();
-        } else {
-            ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS);
-        }
+    //Animation function
+    private void flashAnimation(TextView recTextView){
+        //You can check the animation you received in the anim folder.
+        Animation startAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.flash_animation);
+        recTextView.startAnimation(startAnimation);
+    }
+
+    //Date Function to get the current time in real time
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                if(intent.getAction().compareTo(Intent.ACTION_TIME_TICK)==0)
+                    dateTextView.setText(dateFormat.format(new Date()));
+            }
+        };
+        registerReceiver(broadcastReceiver,new IntentFilter(Intent.ACTION_TIME_TICK));
+    }
+
+    //Date function to get the current time in real time
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(broadcastReceiver!=null)
+            unregisterReceiver(broadcastReceiver);
     }
 
 
@@ -144,7 +184,6 @@ public class CameraActivity extends AppCompatActivity {
         }
     }
 
-    // Utility function
     private boolean allPermissionsGranted() {
 
         for (String permission : REQUIRED_PERMISSIONS) {
@@ -166,15 +205,16 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     private void openCamera() throws CameraAccessException {
+        //Create a Manager that handles camera2
         CameraManager manager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
-
+        //0 means rear camera, 1 means front camera.
         cameraId = manager.getCameraIdList()[0];
         CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraId);
-
+        //Get Camera Information
         StreamConfigurationMap map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
-
+        //Return the size of the format
         imageDimensions = map.getOutputSizes(SurfaceTexture.class)[0];
-
+        //permission check
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
             manager.openCamera(cameraId, stateCallback, null);
         } else {
@@ -183,6 +223,7 @@ public class CameraActivity extends AppCompatActivity {
 
     }
 
+    //Displaying the screen in a texture view
     private void createCameraPreview() throws CameraAccessException {
         SurfaceTexture texture = textureView.getSurfaceTexture();
         texture.setDefaultBufferSize(imageDimensions.getWidth(), imageDimensions.getHeight());
@@ -190,7 +231,7 @@ public class CameraActivity extends AppCompatActivity {
 
         captureRequestBuilder = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
         captureRequestBuilder.addTarget(surface);
-
+        //Operate the camera in real time
         cameraDevice.createCaptureSession(Arrays.asList(surface), new CameraCaptureSession.StateCallback() {
             @Override
             public void onConfigured(@NonNull CameraCaptureSession session) {
@@ -217,7 +258,6 @@ public class CameraActivity extends AppCompatActivity {
         if (cameraDevice == null) {
             return;
         }
-
         captureRequestBuilder.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_AUTO);
         cameraCaptureSession.setRepeatingRequest(captureRequestBuilder.build(), null, mBackgroundHandler);
 
@@ -230,7 +270,7 @@ public class CameraActivity extends AppCompatActivity {
         mBackgroundHandler = null;
     }
 
-    // Callback Listener
+    //Listener callback function
     private TextureView.SurfaceTextureListener textureListener = new TextureView.SurfaceTextureListener() {
         @Override
         public void onSurfaceTextureAvailable(@NonNull SurfaceTexture surface, int width, int height) {
@@ -260,7 +300,7 @@ public class CameraActivity extends AppCompatActivity {
 
     private final CameraDevice.StateCallback stateCallback = new CameraDevice.StateCallback() {
         @Override
-        public void onOpened(@NonNull CameraDevice camera) {
+        public void onOpened(@NonNull CameraDevice camera) {//Store in device object member variable
             cameraDevice = camera;
             try {
                 createCameraPreview();
@@ -281,32 +321,6 @@ public class CameraActivity extends AppCompatActivity {
         }
     };
 
-    private void flashAnimation(TextView recTextView) {
 
-        Animation startAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.flash_animation);
-        recTextView.startAnimation(startAnimation);
-    }
 
-    //date
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        broadcastReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                if (intent.getAction().compareTo(Intent.ACTION_TIME_TICK) == 0)
-                    dateTextView.setText(dateFormat.format(new Date()));
-            }
-        };
-        registerReceiver(broadcastReceiver, new IntentFilter(Intent.ACTION_TIME_TICK));
-    }
-
-    //date
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if (broadcastReceiver != null)
-            unregisterReceiver(broadcastReceiver);
-    }
 }

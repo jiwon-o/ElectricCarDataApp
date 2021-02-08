@@ -4,7 +4,12 @@ Description: Car Layout
 
 (*This product has layout only, with only essential features added to operate the layout.*)
 
-Rights: copyrighted templates and code. Some templates and code (Eg Graph) use the following APIs and libraries: *MPandido Chart Created by Philipp Jahoda*
+Rights: copyrighted templates and code. 
+Some templates and code (Eg Graph,Animation) use the following APIs and libraries: *MPandido Chart Created by Philipp Jahoda* *Lottie Animation by Rishabh Goel*
+​
+Animation by Rishabh Goel on LottieFiles
+Rishabh Goel on LottieFiles: https://lottiefiles.com/11808-electricity-loading
+
 You are licensed under Apache License Version 2.0 ("License"), and you cannot use this file except for license compliance. You can obtain a copy of the license.
 
 http://www.apache.org/licenses/LICENSE-2.0
