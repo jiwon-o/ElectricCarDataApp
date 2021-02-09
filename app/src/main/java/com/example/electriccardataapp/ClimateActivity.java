@@ -33,7 +33,7 @@ public class ClimateActivity extends AppCompatActivity {
 
     private int btnClick = 0;
     private int count = 70;
-    private boolean i = true;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -106,6 +106,7 @@ public class ClimateActivity extends AppCompatActivity {
         });
     }
 
+
     //Toast when pressing the temperature button without turning on the power
     public static void setCustomToast(Context context) {
         TextView view = new TextView(context);
@@ -151,60 +152,61 @@ public class ClimateActivity extends AppCompatActivity {
 
 
     //auto mode button
+    private boolean auto_count = true;
     private void autoButton(ImageView autoButtonImage) {
         autoButtonImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {//When you click
-                if (autoImage.isClickable()== true) {
-
+                if (auto_count == true) {
                     autoImage.setImageResource(R.drawable.ic_mode_auto_red);
                     autoText.setTextColor(Color.RED);
-                    i = false;
+                    auto_count = false;
                 } else {//When you didn't click
                     autoImage.setImageResource(R.drawable.ic_mode_auto);
                     autoText.setTextColor(Color.WHITE);
-                    i = true;
+                    auto_count = true;
                 }
             }
         });
     }
 
     //cool mode button
+    private boolean cool_count = true;
     private void coolButton(ImageView coolButtonImage) {
         coolButtonImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (i == true) {
+                if (cool_count == true) {
                     coolImage.setImageResource(R.drawable.ic_mode_cool_red);
                     coolText.setTextColor(Color.RED);
-                    i = false;
+                    cool_count = false;
                 } else {
                     coolImage.setImageResource(R.drawable.ic_mode_cool);
                     coolText.setTextColor(Color.WHITE);
-                    i = true;
+                    cool_count = true;
                 }
             }
         });
     }
 
     //dry mode button
+    private boolean dry_count = true;
     private void dryButton(ImageView dryButtonImage) {
         dryButtonImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (i == true) {
+                if (dry_count == true) {
                     dryImage.setImageResource(R.drawable.ic_mode_dry_red);
                     dryText.setTextColor(Color.RED);
-                    i = false;
+                    dry_count = false;
                 } else {
                     dryImage.setImageResource(R.drawable.ic_mode_dry);
                     dryText.setTextColor(Color.WHITE);
-                    i = true;
+                    dry_count = true;
                 }
             }
         });
     }
-
 
 
 }
