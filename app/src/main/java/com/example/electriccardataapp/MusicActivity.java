@@ -1,28 +1,21 @@
 package com.example.electriccardataapp;
 
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
+
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 
 public class MusicActivity extends AppCompatActivity {
 
-    ImageView backImage;
-    ImageView playImage;
+    private ImageView backImage;
+    private ImageView playImage;
 
-    boolean i = true;
+    private boolean i = true;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

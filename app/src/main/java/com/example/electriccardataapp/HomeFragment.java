@@ -82,11 +82,7 @@ public class HomeFragment extends Fragment {
                     start = false;
                     changeImage.setImageResource(R.drawable.btn_circle_red);
                 }
-
-
             }
-
-
         });
 
         //set transparency (cf) Acceptaable Range : 0.0f ~ 1.0f)
@@ -99,12 +95,14 @@ public class HomeFragment extends Fragment {
         animation_btn.setRepeatCount(14);
     }
 
+    //Animation function
     private void flashAnimation(TextView recTextView) {
-
+        //You can check the animation you received in the anim folder.
         Animation startAnimation = AnimationUtils.loadAnimation(this.getContext(), R.anim.flash_one_animation);
         recTextView.startAnimation(startAnimation);
     }
 
+    //Battery numeric increment Motion related code.
     Handler handler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -121,7 +119,7 @@ public class HomeFragment extends Fragment {
                 while (true) {
                     try {
                         handler.sendMessage(handler.obtainMessage());
-                        Thread.sleep(10);
+                        Thread.sleep(10);//set update time
                     } catch (Throwable throwable) {
 
                     }
@@ -133,7 +131,7 @@ public class HomeFragment extends Fragment {
 
     private void updateThread() {
         i++;
-        if (i <= 98) {
+        if (i <= 98) {//up to 98
             textBattery.setText(String.valueOf(i));
         }
     }

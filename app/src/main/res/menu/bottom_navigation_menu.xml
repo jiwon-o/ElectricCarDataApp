@@ -15,7 +15,7 @@
     <item
         android:id="@+id/action_data"
         android:enabled="true"
-        android:icon="@drawable/ic_menu_data_unclick"
+        android:icon="@drawable/ic_menu_data_unclick_black"
         android:title="Data"/>
 
 </menu>

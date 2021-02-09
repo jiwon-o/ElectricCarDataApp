@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -20,7 +19,7 @@ import java.util.ArrayList;
 
 public class BatteryActivity extends AppCompatActivity {
 
-    ImageView backImage;
+    private ImageView backImage;
     private PieChart chart_pie;
 
 
@@ -32,13 +31,8 @@ public class BatteryActivity extends AppCompatActivity {
         // Back button
         backImage = findViewById(R.id.image_back);
 
-        backImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-
+        //Backward Button Operation function
+        backButton(backImage);
 
         // You can customize the pie chart of battery graph here.
         chart_pie = findViewById(R.id.chart_pie);
@@ -72,6 +66,16 @@ public class BatteryActivity extends AppCompatActivity {
         chart_pie.setEntryLabelTextSize(11f);
 
         setData(4, 25);
+    }
+
+    //backbutton function
+    private void backButton(ImageView backImage){
+        backImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     // get data here

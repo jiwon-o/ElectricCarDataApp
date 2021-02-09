@@ -14,26 +14,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ClimateActivity extends AppCompatActivity {
 
-    ImageView blackButtonImage;
-    ImageView backImage;
-    TextView blackButtonText1;
-    TextView blackButtonText2;
-    TextView temperatureNum;
-    ImageView upButtonImage;
-    ImageView downButtonImage;
-    ImageView autoButtonImage;
-    ImageView coolButtonImage;
-    ImageView dryButtonImage;
-    ImageView autoImage;
-    ImageView coolImage;
-    ImageView dryImage;
-    TextView autoText;
-    TextView coolText;
-    TextView dryText;
+    private ImageView blackButtonImage;
+    private ImageView backImage;
+    private TextView blackButtonText1;
+    private TextView blackButtonText2;
+    private TextView temperatureNum;
+    private ImageView upButtonImage;
+    private ImageView downButtonImage;
+    private ImageView autoButtonImage;
+    private ImageView coolButtonImage;
+    private ImageView dryButtonImage;
+    private ImageView autoImage;
+    private ImageView coolImage;
+    private ImageView dryImage;
+    private TextView autoText;
+    private TextView coolText;
+    private TextView dryText;
 
-    int btnClick = 0;
-    int count = 70;
-    boolean i = true;
+    private int btnClick = 0;
+    private int count = 70;
+    private boolean i = true;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,9 +58,11 @@ public class ClimateActivity extends AppCompatActivity {
         coolText = findViewById(R.id.tv_cool);
         dryText = findViewById(R.id.tv_dry);
 
+        //Backward Button Operation function
         backButton(backImage);
 
         temperatureButton(blackButtonImage);
+
 
         autoButton(autoButtonImage);
         coolButton(coolButtonImage);
@@ -73,7 +75,7 @@ public class ClimateActivity extends AppCompatActivity {
 
     }
 
-    // Back button function
+    //Back button function
     private void backButton(ImageView backImage) {
         backImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,10 +116,11 @@ public class ClimateActivity extends AppCompatActivity {
         toast.show();
     }
 
+    //You can control the number of temperatures
     class upDownButton implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            if (btnClick % 2 == 1) {
+            if (btnClick % 2 == 1) {//When you click Climate On/Off button
                 switch (v.getId()) {
                     case R.id.temperature_up_btn: {
                         if (count < 85) {
@@ -134,7 +137,7 @@ public class ClimateActivity extends AppCompatActivity {
                         break;
                     }
                 }
-            } else if (btnClick % 2 == 0) {
+            } else if (btnClick % 2 == 0) {//When you didn't click Climate On/Off button
                 switch (v.getId()) {
                     case R.id.temperature_up_btn:
                     case R.id.temperature_down_btn: {
@@ -147,15 +150,17 @@ public class ClimateActivity extends AppCompatActivity {
     }
 
 
+    //auto mode button
     private void autoButton(ImageView autoButtonImage) {
         autoButtonImage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (i == true) {
+            public void onClick(View v) {//When you click
+                if (autoImage.isClickable()== true) {
+
                     autoImage.setImageResource(R.drawable.ic_mode_auto_red);
                     autoText.setTextColor(Color.RED);
                     i = false;
-                } else {
+                } else {//When you didn't click
                     autoImage.setImageResource(R.drawable.ic_mode_auto);
                     autoText.setTextColor(Color.WHITE);
                     i = true;
@@ -164,6 +169,7 @@ public class ClimateActivity extends AppCompatActivity {
         });
     }
 
+    //cool mode button
     private void coolButton(ImageView coolButtonImage) {
         coolButtonImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,6 +187,7 @@ public class ClimateActivity extends AppCompatActivity {
         });
     }
 
+    //dry mode button
     private void dryButton(ImageView dryButtonImage) {
         dryButtonImage.setOnClickListener(new View.OnClickListener() {
             @Override

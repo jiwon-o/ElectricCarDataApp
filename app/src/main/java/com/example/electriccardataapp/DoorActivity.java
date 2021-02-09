@@ -22,10 +22,10 @@ public class DoorActivity extends AppCompatActivity {
     private ToggleButton backLeftLockBtn;
     private ToggleButton backRightLockBtn;
 
-    ImageView backImage;
-    FrameLayout openWarningImage;
-    TextView doorLockText;
-    TextView btnToUnlockText;
+    private ImageView backImage;
+    private FrameLayout openWarningImage;
+    private TextView doorLockText;
+    private TextView btnToUnlockText;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -176,7 +176,9 @@ public class DoorActivity extends AppCompatActivity {
         });
     }
 
+    //Animation function
     private void buttonAnimation(FrameLayout openButtonImage) {
+        //You can check the animation you received in the anim folder.
         Animation startAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.flash_animation);
         openButtonImage.startAnimation(startAnimation);
     }

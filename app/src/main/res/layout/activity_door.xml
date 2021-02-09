@@ -215,7 +215,7 @@ Copyright 2021 © AppForest.kr-->
                 android:layout_marginBottom="2dp"
                 android:fontFamily="@font/roboto_regular"
                 android:text="open"
-                android:textColor="#ffffff"
+                android:textColor="#ea2326"
                 android:textSize="16sp"
                 android:textStyle="normal" />
 

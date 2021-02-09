@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+//Page control code. If you want to change it to another place, please use the form below and register it in manifest.
 public class ControlFragment extends Fragment {
     private View view;
     FrameLayout frameLayoutTemperature;

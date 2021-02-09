@@ -13,9 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LightActivity extends AppCompatActivity {
 
-    ImageView backImage;
-    RadioButton headOffButton;
-    RadioButton domeOffButton;
+    private ImageView backImage;
+    private RadioButton headOffButton;
+    private RadioButton domeOffButton;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
