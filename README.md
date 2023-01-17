@@ -1,9 +1,3 @@
-![데이터통계](https://user-images.githubusercontent.com/64193469/212931421-bf7544af-ae2d-4b8b-8152-6f6eb43b8d09.png)
-![데이터통계2](https://user-images.githubusercontent.com/64193469/212931431-722268e7-cdd4-419d-9c99-672616678bcf.png)
-![데이터통계3](https://user-images.githubusercontent.com/64193469/212931444-043ad083-adaf-48fd-8e58-b5a78d0e5713.png)
-![데이터통계4](https://user-images.githubusercontent.com/64193469/212931458-c30bf3e2-ac59-4748-8622-dd287ebbf46b.png)
-
-
 Author: AppForest.kr
 Date: February 2021
 Description: Car Layout
